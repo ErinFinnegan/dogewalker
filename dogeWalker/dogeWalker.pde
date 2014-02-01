@@ -4,6 +4,7 @@ PImage doge;
 PVector location;
 PVector velocity;
 
+
 void setup() {
   size(1200, 1080);
   doge = loadImage("doge.png");

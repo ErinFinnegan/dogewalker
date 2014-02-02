@@ -17,8 +17,9 @@ void draw() {
   textFont(font, (random(10, 140)));
   background(255);
   text("wow", (random(12, width)), (random(12, height)));
-  dogewalker.update();
-  dogewalker.checkEdges();
+ // dogewalker.update();
+//  dogewalker.checkEdges();
+  dogewalker.step();  
   dogewalker.display();  
 }
 

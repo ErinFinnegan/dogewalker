@@ -31,7 +31,7 @@ class Walker {
 
   void display() {
     imageMode(CENTER);
-    image(doge, location.x, location.y);
+    image(doge, x, y);
   }
 
   //  void checkEdges() {

@@ -1,6 +1,4 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
+//Largely from The Nature of Code by Daniel Shiffman http://natureofcode.com
 
 class Walker {
 
@@ -38,32 +36,6 @@ class Walker {
     if ((location.y > height) || (location.y < 0)) {
       velocity.y = velocity.y * -1;
     }
-
-    //    if (location.x > width) {
-    //      location.x = 0;
-    //    } 
-    //    else if (location.x < 0) {
-    //      location.x = width;
-    //    }
-    //
-    //    if (location.y > height) {
-    //      location.y = 0;
-    //    } 
-    //    else if (location.y < 0) {
-    //      location.y = height;
-    //    }
   }
 }
-
-// // Add the current speed to the location.
-
-// // the former code for bouncing off the edges
-//   location.add(velocity);
-//
-//  if ((location.x > width) || (location.x < 0)) {
-//    velocity.x = velocity.x * -1;
-//  }
-//  if ((location.y > height) || (location.y < 0)) {
-//    velocity.y = velocity.y * -1;
-//  }
 

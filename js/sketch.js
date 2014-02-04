@@ -2,26 +2,30 @@
 
 var w;
 
+var canvas;
+
 function setup() {
-  createGraphics(800,600);
+  canvas = createGraphics(400,300);
+  canvas.position(0, 50);
+
   //background(127);
   // Create a walker object
   w = new Walker();
 
 };
 
-function preloader() {
+/*function preloader() {
   doge = new Image();
   doge.src = "doge.png"
-}
+}*/
 
 function draw() {
-  background(255);
+  background(51);
   // Run the walker object
   //w.walk();
-  //w.render();
+  w.render();
     //throw('draw is most draw');
-    console.log("I'm dying");
+    //console.log("I'm dying");
 };
 
 function Walker() {
@@ -32,11 +36,11 @@ function Walker() {
 };
 
 Walker.prototype.render = function() {
-  doge;
- // throw('We have doge');
-	stroke(0);
-	point(width/2, height/2);
-  console.log("send help");
+  //doge;
+  // throw('We have doge');
+	stroke(255);
+	point(this.x,this.y);
+  //console.log("send help");
 }
 
 

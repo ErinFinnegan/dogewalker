@@ -9,20 +9,21 @@ PVector velocity;
 Walker dogewalker;
 float Gaussian = randomGaussian();
 
+
 void setup() {
   size(1200, 1080);
   doge = loadImage("doge.png");
   font = loadFont("ComicSansMS-Bold-40.vlw");
   dogewalker = new Walker();
-  startTime = millis();
+  startTime = 0;
 }
 
 void draw() {
   fill(234, 33, 222);
-  int m = millis();
   textFont(font, (random(10, 140)));
   background(255);
-
+  int m = millis();
+  startTime = m;
   if (bDisplayMessage == true) {
     //text("wow", (width/2 + randomGaussian()), (height/2 + randomGaussian()));
     text("wow", (random(12, width)), (random(12, height)));

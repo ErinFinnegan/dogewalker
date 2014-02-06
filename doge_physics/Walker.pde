@@ -8,28 +8,34 @@ class Walker {
   PVector velocity;
   PVector acceleration;
   float topspeed;
+  float mass;
+  int fontSize;
 
-  Walker() {
+  Walker(float m, int fontSize) {
     location = new PVector(width/2, height/2);
     velocity = new PVector(0, 0);
     topspeed = 6;
+    mass = m;
+    fontSize = f;
   }
 
   void update() {
 
     acceleration = PVector.random2D();
     acceleration.mult(random(2));
-
     velocity.add(acceleration);
     velocity.limit(topspeed);
     location.add(velocity);
   }
 
   void display() {
-    imageMode(CENTER);
-    image(doge, location.x, location.y);
+    //imageMode(CENTER);
+    //image(doge, location.x, location.y);
+    fill(234, 33, 222);
+    textFont(font, fontSize);
+    text("wow", location.x, location.y);
+    println("fontsize in the Walker class " + fontSize);
   }
-
   void checkEdges() {
 
     if ((location.x > width) || (location.x < 0)) {
@@ -38,32 +44,6 @@ class Walker {
     if ((location.y > height) || (location.y < 0)) {
       velocity.y = velocity.y * -1;
     }
-
-    //    if (location.x > width) {
-    //      location.x = 0;
-    //    } 
-    //    else if (location.x < 0) {
-    //      location.x = width;
-    //    }
-    //
-    //    if (location.y > height) {
-    //      location.y = 0;
-    //    } 
-    //    else if (location.y < 0) {
-    //      location.y = height;
-    //    }
   }
 }
-
-// // Add the current speed to the location.
-
-// // the former code for bouncing off the edges
-//   location.add(velocity);
-//
-//  if ((location.x > width) || (location.x < 0)) {
-//    velocity.x = velocity.x * -1;
-//  }
-//  if ((location.y > height) || (location.y < 0)) {
-//    velocity.y = velocity.y * -1;
-//  }
 

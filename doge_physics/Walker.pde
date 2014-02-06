@@ -16,7 +16,7 @@ class Walker {
     velocity = new PVector(0, 0);
     topspeed = 6;
     mass = m;
-    fontSize = f;
+    fontSize = int(random(40, 140));
   }
 
   void update() {

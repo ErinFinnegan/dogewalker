@@ -12,7 +12,7 @@ void setup() {
   size(1200, 1080);
   doge = loadImage("doge.png");
   font = loadFont("ComicSansMS-Bold-40.vlw");
-  f = random(40, 140);
+  f = int(random(40, 140));
   for (int i = 0; i < wowwalker.length; i++) {
     wowwalker[i] = new Walker(4, f);
   }
@@ -29,7 +29,7 @@ void draw() {
     wowwalker[i].checkEdges();
     wowwalker[i].update();
   }
- // println("fontsize in the draw loop" + fontSize);
+  // println("fontsize in the draw loop" + fontSize);
   imageMode(CENTER);
   image(doge, width/2, height/2);
 }

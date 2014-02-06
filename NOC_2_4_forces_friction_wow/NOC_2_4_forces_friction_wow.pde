@@ -3,9 +3,13 @@
 // http://natureofcode.com
 
 Mover[] movers = new Mover[5];
+PFont font;
+PImage doge;
 
 void setup() {
-  size(383, 200);
+  size(1200, 1080);
+  doge = loadImage("doge.png");
+  font = loadFont("ComicSansMS-Bold-40.vlw");
   randomSeed(1);
   for (int i = 0; i < movers.length; i++) {
     movers[i] = new Mover(random(1, 4), random(width), 0);
@@ -34,9 +38,10 @@ void draw() {
     movers[i].display();
     movers[i].checkEdges();
   }
+
+  imageMode(CENTER);
+  image(doge, width/2, height/2);
 }
-
-
 
 
 

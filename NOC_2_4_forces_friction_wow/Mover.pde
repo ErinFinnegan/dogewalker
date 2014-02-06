@@ -28,10 +28,10 @@ class Mover {
   }
 
   void display() {
-    stroke(0);
-    strokeWeight(2);
-    fill(0, 127);
-    ellipse(location.x, location.y, mass*16, mass*16);
+    fill(234, 33, 222);
+    textFont(font, (mass*16));
+    text("wow", location.x, location.y);
+    //ellipse(location.x, location.y, mass*16, mass*16);
   }
 
   void checkEdges() {

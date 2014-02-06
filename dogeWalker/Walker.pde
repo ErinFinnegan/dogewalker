@@ -30,8 +30,11 @@ class Walker {
   }
 
   void display() {
-    imageMode(CENTER);
-    image(doge, x, y);
+    //imageMode(CENTER);
+    //image(doge, x, y);
+    stroke(0);
+    point(x,y);
+    
   }
 
   //  void checkEdges() {
@@ -52,7 +55,7 @@ class Walker {
 
     while (!ok) {
 
-      int choice = int(random(4));
+      int choice = int(random(5));
 
       int saveX = x;
       int saveY = y;
@@ -65,9 +68,11 @@ class Walker {
       } 
       else if (choice == 2) {
         y++;
-      } 
-      else {
+      } else if (choice == 3) {
         y--;
+      } else if (choice == 4) {
+        x++;
+        y++;
       }
 
       x = constrain(x, 0, width-1);

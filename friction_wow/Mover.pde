@@ -28,9 +28,9 @@ class Mover {
   }
 
   void display() {
-    fill(234, 33, 222);
+    fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
     textFont(font, (mass*16));
-    text("wow", location.x, location.y);
+    text((words[index]), location.x, location.y);
     //ellipse(location.x, location.y, mass*16, mass*16);
   }
 

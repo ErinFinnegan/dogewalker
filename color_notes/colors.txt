@@ -9,51 +9,57 @@ blue/purple
 63
 72
 204
+#3F48CC
 
 pink
 255
 174
 201
+#FFAEC9
 
 blue
 0
 162
 232
-
+#00A2E8
 
 orange
 255
 127
 39
-
+#FF7F27
 
 yellow
 255
 242
 0
+#FFF200
 
 
 red
 136
 0
 21
+#880015
 
 
 pink/purple
 212
 176
 190
+#D4B0BE
 
 
 yellow green
 207
 209
 100
+#CFD164
 
 
 orange/red
 200
 120
 87
-
+#C87857
 

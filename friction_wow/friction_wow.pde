@@ -10,7 +10,7 @@ String[] words = {
   "wow", "many Newton", "much law",
 };
 int index = int(random(words.length)); 
-
+color rgb;
 
 
 void setup() {
@@ -21,6 +21,9 @@ void setup() {
   for (int i = 0; i < movers.length; i++) {
     movers[i] = new Mover(random(0.5, 8), random(width), 0);
   }
+  //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
+  rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
+
 }
 
 void draw() {

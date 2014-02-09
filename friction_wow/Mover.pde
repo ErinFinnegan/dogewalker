@@ -28,7 +28,8 @@ class Mover {
   }
 
   void display() {
-    fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
+    //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
+    fill(rgb);
     textFont(font, (mass*16));
     text((words[index]), location.x, location.y);
     //ellipse(location.x, location.y, mass*16, mass*16);

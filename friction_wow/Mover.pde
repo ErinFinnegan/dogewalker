@@ -1,6 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
 
 class Mover {
 
@@ -28,7 +25,9 @@ class Mover {
   }
 
   void display() {
-    textFont(font, (mass*16));
+   // imageMode(CENTER);
+   // image(doge, location.x, location.y);
+    textFont(font, (mass*9));
     text((words[index]), location.x, location.y);
     //ellipse(location.x, location.y, mass*16, mass*16);
   }
@@ -40,10 +39,10 @@ class Mover {
       velocity.x *= -1;
     }
 
-//    if (location.x > width) {
-//      location.x = width;
-//      velocity.x *= -1;
-//    } 
+    //    if (location.x > width) {
+    //      location.x = width;
+    //      velocity.x *= -1;
+    //    } 
     if (location.x < 0) {
       location.x = 0;
       velocity.x *= -1;

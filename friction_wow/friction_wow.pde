@@ -15,9 +15,9 @@ color rgb;
 
 
 void setup() {
-  size(1200, 900);
+  size(1000, 750);
   millis();
-  doge = loadImage("doge.png");
+  doge = loadImage("dogenowords2.jpg");
   font = loadFont("ComicSansMS-Bold-40.vlw");
   randomSeed(1);
   for (int i = 0; i < movers.length; i++) {
@@ -31,8 +31,8 @@ void setup() {
 
 void draw() {
   background(255);
-  imageMode(CENTER);
-  image(doge, width/2, height/2);
+//  imageMode(CENTER);
+  image(doge, 0, 0);
   for (int i = 0; i < movers.length; i++) {
 
     PVector wind = new PVector(1, 0);

@@ -1,3 +1,6 @@
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
 
 class Mover {
 
@@ -37,11 +40,11 @@ class Mover {
       velocity.x *= -1;
     }
 
-    if (location.x > width) {
-      location.x = width;
-      velocity.x *= -1;
-    } 
-    else if (location.x < 0) {
+//    if (location.x > width) {
+//      location.x = width;
+//      velocity.x *= -1;
+//    } 
+    if (location.x < 0) {
       location.x = 0;
       velocity.x *= -1;
     }

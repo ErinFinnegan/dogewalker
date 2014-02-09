@@ -7,16 +7,16 @@ color[] ArrayOfColors = {
 };
 String[] words = { 
   "wow", "much processing", "very Java", "much codee", "very scare", "PVectro", "much force", "frictoin", 
-  "wow", "many Newton", "much law",
+  "wow", "very Newton", "much law",
 };
 int index = int(random(words.length)); 
 color rgb;
-//some changes for git blah blah blah
-//no I'm serious
+
 
 
 void setup() {
-  size(1200, 1080);
+  size(1200, 900);
+  millis();
   doge = loadImage("doge.png");
   font = loadFont("ComicSansMS-Bold-40.vlw");
   randomSeed(1);
@@ -35,8 +35,8 @@ void draw() {
   image(doge, width/2, height/2);
   for (int i = 0; i < movers.length; i++) {
 
-    PVector wind = new PVector(0., 0);
-    PVector gravity = new PVector(0, 0.1*movers[i].mass);
+    PVector wind = new PVector(1, 0);
+    PVector gravity = new PVector(0, 1.0*movers[i].mass);
 
     float c = 0.1;
     PVector friction = movers[i].velocity.get();
@@ -45,12 +45,15 @@ void draw() {
     friction.mult(c);
 
     movers[i].applyForce(friction);
-    movers[i].applyForce(wind);
+    if (millis() > 5000) {
+      movers[i].applyForce(wind);
+    };
     movers[i].applyForce(gravity);
 
     movers[i].update();
     movers[i].display();
     movers[i].checkEdges();
   }
+  println("millis = " + millis());
 }
 

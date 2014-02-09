@@ -11,6 +11,7 @@ String[] words = {
 };
 int index = int(random(words.length)); 
 color rgb;
+//some changes for git
 
 
 void setup() {

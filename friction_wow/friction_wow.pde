@@ -11,7 +11,8 @@ String[] words = {
 };
 int index = int(random(words.length)); 
 color rgb;
-//some changes for git
+//some changes for git blah blah blah
+//no I'm serious
 
 
 void setup() {
@@ -24,7 +25,8 @@ void setup() {
   }
   //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
   rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
-
+  fill(rgb);
+  //Pick one word and one color per word at random from my arrays and then use those words in the draw loop as movers
 }
 
 void draw() {
@@ -38,7 +40,7 @@ void draw() {
 
     float c = 0.1;
     PVector friction = movers[i].velocity.get();
-    friction.mult(-1); 
+    friction.mult(-1.5); 
     friction.normalize();
     friction.mult(c);
 

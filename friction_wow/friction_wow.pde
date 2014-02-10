@@ -11,8 +11,8 @@ String[] words = {
 };
 int index = int(random(words.length)); 
 color rgb;
-
-
+int bounce;
+PVector newGravity;
 
 void setup() {
   size(1000, 750);
@@ -26,26 +26,28 @@ void setup() {
   //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
   rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
   fill(rgb);
+  bounce = 0;
+  println("movers.length = " + movers.length);
   //Pick one word and one color per word at random from my arrays and then use those words in the draw loop as movers
 }
 
 void draw() {
   background(255);
-//  imageMode(CENTER);
+  //  imageMode(CENTER);
   image(doge, 0, 0);
   for (int i = 0; i < movers.length; i++) {
 
     PVector wind = new PVector(1, 0);
-    PVector gravity = new PVector(0, 1.0*movers[i].mass);
+    PVector gravity = new PVector(0, (1.0*movers[i].mass + (bounce/2)));
 
     float c = 0.1;
     PVector friction = movers[i].velocity.get();
-    friction.mult(-1.5); 
+    friction.mult(-1.5);  //the friction multiplier was -1.5 originally
     friction.normalize();
-    friction.mult(c);
+    friction.mult(c); //c originally
 
     movers[i].applyForce(friction);
-    if (millis() > 5000) {
+    if (bounce > 50 ) {
       movers[i].applyForce(wind);
     };
     movers[i].applyForce(gravity);
@@ -53,7 +55,10 @@ void draw() {
     movers[i].update();
     movers[i].display();
     movers[i].checkEdges();
+    println("gravity = " + gravity);
+    gravity = newGravity;
   }
-  println("millis = " + millis());
+  //  println("millis = " + millis());
+  println("bounce = " + bounce);
 }
 

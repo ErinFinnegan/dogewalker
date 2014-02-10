@@ -25,8 +25,8 @@ class Mover {
   }
 
   void display() {
-   // imageMode(CENTER);
-   // image(doge, location.x, location.y);
+    // imageMode(CENTER);
+    // image(doge, location.x, location.y);
     textFont(font, (mass*9));
     text((words[index]), location.x, location.y);
     //ellipse(location.x, location.y, mass*16, mass*16);
@@ -51,6 +51,9 @@ class Mover {
     if (location.y > height) {
       velocity.y *= -1;
       location.y = height;
+    }
+    if (location.y == height) {
+      ++bounce;
     }
   }
 }

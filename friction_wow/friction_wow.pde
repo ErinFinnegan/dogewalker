@@ -38,7 +38,7 @@ void draw() {
   for (int i = 0; i < movers.length; i++) {
 
     PVector wind = new PVector(1, 0);
-    PVector gravity = new PVector(0, (1.0*movers[i].mass + (bounce/2)));
+    PVector gravity = new PVector(0, (1.0*movers[i].mass + (bounce/5)));
 
     float c = 0.1;
     PVector friction = movers[i].velocity.get();
@@ -47,7 +47,7 @@ void draw() {
     friction.mult(c); //c originally
 
     movers[i].applyForce(friction);
-    if (bounce > 50 ) {
+    if (bounce > 50) {
       movers[i].applyForce(wind);
     };
     movers[i].applyForce(gravity);

@@ -9,7 +9,7 @@ String[] words = {
   "wow", "much processing", "very Java", "much codee", "very scare", "PVectro", "much force", "frictoin", 
   "wow", "very Newton", "much law",
 };
-int index = int(random(words.length)); 
+int index; 
 color rgb;
 int bounce;
 PVector newGravity;
@@ -17,18 +17,23 @@ PVector newGravity;
 void setup() {
   size(1000, 750);
   millis();
+ // fill(rgb);
   doge = loadImage("dogenowords2.jpg");
   font = loadFont("ComicSansMS-Bold-40.vlw");
   randomSeed(1);
+  rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
   for (int i = 0; i < movers.length; i++) {
-    movers[i] = new Mover(random(0.5, 8), random(width), 0);
+    movers[i] = new Mover(random(0.5, 8), random(width), 0, rgb);
   }
   //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
-  rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
-  fill(rgb);
+  println("rgb = " + rgb);
   bounce = 0;
   println("movers.length = " + movers.length);
+  println("(ArrayOfColors[(int) random(ArrayOfColors.length)]) = " + (ArrayOfColors[(int) random(ArrayOfColors.length)])); 
+  println("ArrayOfColors = " + ArrayOfColors);
+  println("words = " + words);
   //Pick one word and one color per word at random from my arrays and then use those words in the draw loop as movers
+  index = int(random(words.length));
 }
 
 void draw() {
@@ -55,10 +60,12 @@ void draw() {
     movers[i].update();
     movers[i].display();
     movers[i].checkEdges();
-    println("gravity = " + gravity);
+    // println("gravity = " + gravity);
     gravity = newGravity;
   }
   //  println("millis = " + millis());
-  println("bounce = " + bounce);
+  //println("bounce = " + bounce);
+  //println("rgb = " + rgb);
+  //rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
 }
 

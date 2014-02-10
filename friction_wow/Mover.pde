@@ -6,11 +6,12 @@ class Mover {
   PVector acceleration;
   float mass;
 
-  Mover(float m, float x, float y) {
+  Mover(float m, float x, float y, color wordColor) {
     mass = m;
     location = new PVector(x, y);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
+    wordColor = rgb;
   }
 
   void applyForce(PVector force) {

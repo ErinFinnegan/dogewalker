@@ -1,4 +1,3 @@
-
 class Mover {
 
   PVector location;
@@ -6,13 +5,11 @@ class Mover {
   PVector acceleration;
   float mass;
 
-  Mover(float m, float x, float y, color wordColor, String WordOftheDay) {
+  Mover(float m, float x, float y) {
     mass = m;
     location = new PVector(x, y);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
-    wordColor = rgb;
-    WordOftheDay = muchWord;
   }
 
   void applyForce(PVector force) {
@@ -27,10 +24,8 @@ class Mover {
   }
 
   void display() {
-    // imageMode(CENTER);
-    // image(doge, location.x, location.y);
-    textFont(font, (mass*9));
-    text(muchWord, location.x, location.y);
+    textFont(font, (mass*16));
+    text((words[index]), location.x, location.y);
     //ellipse(location.x, location.y, mass*16, mass*16);
   }
 

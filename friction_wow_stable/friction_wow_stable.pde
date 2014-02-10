@@ -1,4 +1,3 @@
-
 Mover[] movers = new Mover[5];
 PFont font;
 PImage doge;
@@ -9,38 +8,30 @@ String[] words = {
   "wow", "much processing", "very Java", "much codee", "very scare", "PVectro", "much force", "frictoin", 
   "wow", "very Newton", "much law",
 };
-String muchWord;
-int index; 
+int index = int(random(words.length)); 
 color rgb;
 int bounce;
-PVector newGravity;
+
+
 
 void setup() {
   size(1000, 750);
   millis();
-  // fill(rgb);
   doge = loadImage("dogenowords2.jpg");
   font = loadFont("ComicSansMS-Bold-40.vlw");
   randomSeed(1);
-  rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
   for (int i = 0; i < movers.length; i++) {
-    muchWord = (words[index]);
-    movers[i] = new Mover(random(0.5, 8), random(width), 0, rgb, muchWord);
+    movers[i] = new Mover(random(0.5, 8), random(width), 0);
   }
-  //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
-  println("rgb = " + rgb);
   bounce = 0;
-  println("movers.length = " + movers.length);
-  println("(ArrayOfColors[(int) random(ArrayOfColors.length)]) = " + (ArrayOfColors[(int) random(ArrayOfColors.length)])); 
-  println("ArrayOfColors = " + ArrayOfColors);
-  println("words = " + words);
+  //fill(ArrayOfColors[(int) random(ArrayOfColors.length)]);
+  rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
+  fill(rgb);
   //Pick one word and one color per word at random from my arrays and then use those words in the draw loop as movers
-  index = int(random(words.length));
 }
 
 void draw() {
   background(255);
-  //  imageMode(CENTER);
   image(doge, 0, 0);
   for (int i = 0; i < movers.length; i++) {
 
@@ -49,9 +40,9 @@ void draw() {
 
     float c = 0.1;
     PVector friction = movers[i].velocity.get();
-    friction.mult(-1.5);  //the friction multiplier was -1.5 originally
+    friction.mult(-1.5); 
     friction.normalize();
-    friction.mult(c); //c originally
+    friction.mult(c);
 
     movers[i].applyForce(friction);
     if (bounce > 50) {
@@ -62,12 +53,6 @@ void draw() {
     movers[i].update();
     movers[i].display();
     movers[i].checkEdges();
-    // println("gravity = " + gravity);
-    gravity = newGravity;
   }
-  //  println("millis = " + millis());
-  //println("bounce = " + bounce);
-  //println("rgb = " + rgb);
-  //rgb = (ArrayOfColors[(int) random(ArrayOfColors.length)]);
 }
 

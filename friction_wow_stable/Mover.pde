@@ -46,7 +46,7 @@ class Mover {
     }
 
     if (location.y > height) {
-      velocity.y *= -1;
+      velocity.y *= -1
       location.y = height;
     }
     if (location.y == height) {
